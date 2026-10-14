@@ -22,6 +22,24 @@ public class SandwichShop {
 
         // Store the user's age
         int age = scanner.nextInt();
+
+        // Create a variable to hold the sandwich price
+        double price = 0;
+
+        // Check which sandwich size the user selected
+        if (sandwichSize == 1) {
+
+            // Regular sandwich costs $5.45
+            price = 5.45;
+
+        } else if (sandwichSize == 2) {
+
+            // Large sandwich costs $8.95
+            price = 8.95;
+        }
+
+
+
     }
 
 }

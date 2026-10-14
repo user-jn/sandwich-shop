@@ -5,65 +5,50 @@ import java.util.Scanner;
 public class SandwichShop {
     public static void main(String[] args) {
 
-        // Create Scanner so we can read what the user types
         Scanner scanner = new Scanner(System.in);
 
-        // Ask the user what size sandwich they want
-        System.out.println("Sandwich Sizes:");
+        // Ask the user to choose a sandwich size
         System.out.println("1 - Regular ($5.45)");
         System.out.println("2 - Large ($8.95)");
-        System.out.print("Enter sandwich size (1 or 2): ");
+        System.out.print("Choose an option: ");
 
         // Store the user's sandwich choice
-        int sandwichSize = scanner.nextInt();
+        int option = scanner.nextInt();
 
         // Ask the user for their age
         System.out.print("Enter your age: ");
-
-        // Store the user's age
         int age = scanner.nextInt();
 
-        // Create a variable to hold the sandwich price
-        double price = 0;
+        // Variable to store the sandwich price
+        double price;
 
-        // Check which sandwich size the user selected
-        if (sandwichSize == 1) {
+        // Check which option the user selected
+        if (option == 1) {
 
-            // Regular sandwich costs $5.45
+            // Option 1 is a regular sandwich
             price = 5.45;
 
-        } else if (sandwichSize == 2) {
+        } else {
 
-            // Large sandwich costs $8.95
+            // Option 2 is a large sandwich
             price = 8.95;
         }
-        // Check the customer's age for a discount
+
+        // Check if the customer gets a discount
         if (age <= 17) {
 
-            // Students age 17 or younger receive 10% off
-            // price * 0.10 calculates 10% of the price
-            // Then we subtract that amount from the original price
+            // 10% student discount
             price = price - (price * 0.10);
 
         } else if (age >= 65) {
 
-            // Seniors age 65 or older receive 20% off
-            // price * 0.20 calculates 20% of the price
+            // 20% senior discount
             price = price - (price * 0.20);
-
         }
 
-        // Everyone between 18 and 64 keeps the normal price
-        // because neither condition above will be true
-
-        // Display the final sandwich price
+        // Display the final price
         System.out.printf("Your sandwich costs $%.2f%n", price);
 
-        // Close the Scanner when we are finished using it
         scanner.close();
-
-
-
     }
-
 }

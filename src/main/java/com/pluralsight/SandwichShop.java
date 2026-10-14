@@ -14,6 +14,14 @@ public class SandwichShop {
         System.out.println("2 - Large ($8.95)");
         System.out.print("Enter sandwich size (1 or 2): ");
 
+        // Store the user's sandwich choice
+        int sandwichSize = scanner.nextInt();
+
+        // Ask the user for their age
+        System.out.print("Enter your age: ");
+
+        // Store the user's age
+        int age = scanner.nextInt();
     }
 
 }

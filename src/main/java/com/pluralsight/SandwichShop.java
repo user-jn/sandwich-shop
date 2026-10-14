@@ -37,6 +37,30 @@ public class SandwichShop {
             // Large sandwich costs $8.95
             price = 8.95;
         }
+        // Check the customer's age for a discount
+        if (age <= 17) {
+
+            // Students age 17 or younger receive 10% off
+            // price * 0.10 calculates 10% of the price
+            // Then we subtract that amount from the original price
+            price = price - (price * 0.10);
+
+        } else if (age >= 65) {
+
+            // Seniors age 65 or older receive 20% off
+            // price * 0.20 calculates 20% of the price
+            price = price - (price * 0.20);
+
+        }
+
+        // Everyone between 18 and 64 keeps the normal price
+        // because neither condition above will be true
+
+        // Display the final sandwich price
+        System.out.printf("Your sandwich costs $%.2f%n", price);
+
+        // Close the Scanner when we are finished using it
+        scanner.close();
 
 
 

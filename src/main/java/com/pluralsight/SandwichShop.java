@@ -15,6 +15,10 @@ public class SandwichShop {
         // Store the user's sandwich choice
         int option = scanner.nextInt();
 
+        // new ask, asking if they want the sandwich loaded
+        System.out.print("Would you like your sandwich loaded? (yes/no): ");
+        String loaded = scanner.next();
+
         // Ask the user for their age
         System.out.print("Enter your age: ");
         int age = scanner.nextInt();
@@ -28,10 +32,21 @@ public class SandwichShop {
             // Option 1 is a regular sandwich
             price = 5.45;
 
+            // Add $1.00 if regular sandwich is loaded
+            if (loaded.equals("yes")) {
+                price = price + 1.00;
+            }
+
         } else {
 
             // Option 2 is a large sandwich
             price = 8.95;
+
+            // Add $1.75 if large sandwich is loaded
+            if (loaded.equals("yes")) {
+                price = price + 1.75;
+            }
+
         }
 
         // Check if the customer gets a discount
